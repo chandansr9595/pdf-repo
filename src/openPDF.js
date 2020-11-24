@@ -2,7 +2,7 @@
 export const openPDF = (pdf, password) => {
   let pdfWindow = window.open("");
   if (!pdfWindow)
-    alert("Popup is blocked Please click on Open PDF to open it");
+    return;
   else {
     pdfWindow.document.write(
       "<html><head><title>" +
