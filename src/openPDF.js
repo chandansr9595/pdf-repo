@@ -1,6 +1,9 @@
 
 export const openPDF = (pdf, password) => {
   let pdfWindow = window.open("");
+  if (!pdfWindow)
+    alert("Popup is blocked Please click on Open PDF to open it");
+  else {
     pdfWindow.document.write(
       "<html><head><title>" +
         "</title><style>body{margin: 0px;}iframe{border-width: 0px;}</style><script type='text/javascript' src='//mozilla.github.io/pdf.js/build/pdf.js'></script></head>"
@@ -53,4 +56,5 @@ export const openPDF = (pdf, password) => {
       encodeURI(pdf) +
       "#toolbar=0&navpanes=0&scrollbar=0'></embed></body></html>"
     );
+  }
 };
